@@ -1,0 +1,20 @@
+{
+  "name": "esp8266_data_logger",
+  "version": "1.0.0",
+  "description": "a small app the recives mqtt messages as json format and store them in date stamped files the files will be json documents",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marmoure/esp8266_data_logger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marmoure/esp8266_data_logger/issues"
+  },
+  "homepage": "https://github.com/marmoure/esp8266_data_logger#readme"
+}
