@@ -5,7 +5,7 @@ let client_obj = {
 		clean: true,
 };
 
-const client = mqtt.connect('mqtt://localhost:1883',client_obj);
+const client = mqtt.connect('mqtt://10.42.0.1:1883',client_obj);
 
 client.on('connect',() => {
 		client.subscribe('topic',(err) => {
@@ -13,6 +13,10 @@ client.on('connect',() => {
 						client.publish('topic','hello');
 				}
 		});
+		client.subscribe('outTopic',(err) => {
+			if(!err) {
+			}
+	});
 });
 client.on('message', (topic,message) => {
 	if(topic.toString() == "tempUpdate") {
