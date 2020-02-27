@@ -1,13 +1,11 @@
+/*Mqtt part */
 const mqtt = require('mqtt');
-
-
 let client_obj = {
 		clientId: 'nodeServer',
 		clean: true,
 };
 
 const client = mqtt.connect('mqtt://localhost:1883',client_obj);
-
 
 client.on('connect',() => {
 		client.subscribe('topic',(err) => {
@@ -17,6 +15,27 @@ client.on('connect',() => {
 		});
 });
 client.on('message', (topic,message) => {
-		console.log(message.toString());
-		client.end();
+	if(topic.toString() == "tempUpdate") {
+		addTodata(message.toString());
+	}
+		
 });
+
+/* the temp data part*/
+const date_obj = new Date();
+let template = {
+	temp:"",
+	timeStamp:""
+};
+
+const currentData = [];
+let index = 0;
+
+let addTodata = (str) => {
+	let obj = JSON.parse(str);
+
+};
+
+
+
+
